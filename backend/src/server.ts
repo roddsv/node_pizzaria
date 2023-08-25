@@ -1,10 +1,12 @@
 import express, { Request, Response, NextFunction } from 'express'
 import 'express-async-errors'; //Biblioteca responsável pelo tratamento de erros.
+import cors from 'cors';
 
 import { router } from './routes'
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.use(router);
 
